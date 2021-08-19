@@ -33,7 +33,7 @@ const coin = {
 function display20Flips() {
     const body = document.querySelector('body')
     const results = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 1; i <= 20; i++) {
         let text = document.createTextNode(` Lançamento ${i}: ${coin.toString()}, `)
         results.push(coin.toString())
         body.appendChild(text)
@@ -48,7 +48,7 @@ function display20Flips() {
 
 function display20Images() {
     const results = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 1; i <= 20; i++) {
         coin.toHTML()
         results.push(coin.toString())
     }
@@ -56,3 +56,5 @@ function display20Images() {
 
 
 }
+display20Images();
+display20Flips();
