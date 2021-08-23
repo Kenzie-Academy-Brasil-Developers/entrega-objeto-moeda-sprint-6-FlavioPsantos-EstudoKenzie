@@ -9,7 +9,7 @@ const coin = {
     },
 
     toString: function() {
-        if (coin.flip() === 1) {
+        if (coin.state === 1) {
             return 'Heads'
         } else {
             return 'Tails'
@@ -18,7 +18,7 @@ const coin = {
 
     toHTML: function() {
         const image = document.createElement("img");
-        if (coin.flip() === 1) {
+        if (this.state === 1) {
             image.src = "asset/img/cara.jpg"
         } else {
             image.src = "asset/img/coroa.png"
@@ -34,6 +34,7 @@ function display20Flips() {
     const body = document.querySelector('body')
     const results = [];
     for (let i = 1; i <= 20; i++) {
+        coin.flip()
         let text = document.createTextNode(` Lançamento ${i}: ${coin.toString()}, `)
         results.push(coin.toString())
         body.appendChild(text)
@@ -49,6 +50,7 @@ function display20Flips() {
 function display20Images() {
     const results = [];
     for (let i = 1; i <= 20; i++) {
+        coin.flip()
         coin.toHTML()
         results.push(coin.toString())
     }
